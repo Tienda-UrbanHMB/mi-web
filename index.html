@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ge'lifiesta | Repostería Gourmet</title>
+    
+    <link rel="icon" type="image/png" href="logo.png">
+    
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: #fff0f5; color: #333; }
         header { background: #ff85c1; padding: 30px; text-align: center; color: white; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
@@ -17,7 +20,7 @@
         .card p { line-height: 1.6; }
         .highlight { background: #ff85c1; color: white; padding: 5px 10px; border-radius: 5px; font-weight: bold; }
 
-        /* SECCIÓN DE GALERÍA */
+        /* SECCIÓN DE GALERÍA CORREGIDA */
         .galeria-titulo { text-align: center; color: #e75480; margin-top: 50px; font-size: 2.2rem; }
         .galeria-subtitulo { text-align: center; color: #ff85c1; margin-bottom: 30px; margin-top: -10px; font-weight: normal;}
         .galeria-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 20px; }
@@ -27,14 +30,12 @@
             border-radius: 15px; 
             overflow: hidden; 
             box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
         }
-        .foto-cliente:hover { transform: translateY(-5px); }
         
         .foto-cliente img { 
             width: 100%; 
             height: 300px; 
-            object-fit: cover; 
+            object-fit: cover; /* Esto evita que la foto se estire feo */
             display: block;
         }
         
