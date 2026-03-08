@@ -17,7 +17,7 @@
         .card p { line-height: 1.6; }
         .highlight { background: #ff85c1; color: white; padding: 5px 10px; border-radius: 5px; font-weight: bold; }
 
-        /* NUEVA SECCIÓN: Galería de Trabajos Realizados */
+        /* SECCIÓN DE GALERÍA */
         .galeria-titulo { text-align: center; color: #e75480; margin-top: 50px; font-size: 2.2rem; }
         .galeria-subtitulo { text-align: center; color: #ff85c1; margin-bottom: 30px; margin-top: -10px; font-weight: normal;}
         .galeria-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 20px; }
@@ -29,24 +29,22 @@
             box-shadow: 0 6px 12px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
         }
-        .foto-cliente:hover { transform: translateY(-5px); } /* Efecto de elevación */
+        .foto-cliente:hover { transform: translateY(-5px); }
         
         .foto-cliente img { 
             width: 100%; 
-            height: 280px; 
-            object-fit: cover; /* Recorta la imagen para llenar el contenedor sin deformarse */
+            height: 300px; 
+            object-fit: cover; 
             display: block;
         }
         
-        .info-cliente { padding: 20px; text-align: left; } /* Texto alineado a la izquierda para mejor lectura */
+        .info-cliente { padding: 20px; text-align: left; }
         .info-cliente h4 { margin: 0 0 10px 0; color: #e75480; font-size: 1.3rem; }
         .info-cliente .p-desc { margin: 0; color: #555; line-height: 1.4; margin-bottom: 10px; font-weight: 600; }
         .info-cliente p.testimonio { font-style: italic; font-size: 0.9rem; color: #777; border-left: 3px solid #ffc1e3; padding-left: 10px;}
 
-        .contacto { margin-top: 50px; text-align: center; background: #e75480; color: white; padding: 40px; border-radius: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .contacto h2 { margin-top: 0; }
-        .whatsapp-btn { background: #25d366; color: white; padding: 15px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block; margin-top: 20px; transition: background 0.3s; }
-        .whatsapp-btn:hover { background: #1ebe57; }
+        .contacto { margin-top: 50px; text-align: center; background: #e75480; color: white; padding: 40px; border-radius: 20px; }
+        .whatsapp-btn { background: #25d366; color: white; padding: 15px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block; margin-top: 20px; }
     </style>
 </head>
 <body>
@@ -62,7 +60,6 @@
             <h3>Impresiones Comestibles</h3>
             <p>Personaliza tus creaciones con nuestras impresiones de alta calidad.</p>
             <p><span class="highlight">Opciones:</span> Hoja de Arroz y Azúcar</p>
-            <p>Ideales para gelatinas y pasteles de cualquier temática.</p>
         </div>
 
         <div class="card">
@@ -72,42 +69,42 @@
         </div>
     </div>
 
-    <h2 class="galeria-titulo">Galería de Dulces Creaciones</h2>
-    <p class="galeria-subtitulo">Diseños personalizados que encantan</p>
+    <h2 class="galeria-titulo">Clientes Satisfechos</h2>
+    <p class="galeria-subtitulo">Nuestros trabajos más recientes</p>
     
     <div class="galeria-grid">
         <div class="foto-cliente">
-            <img src="image_1.png" alt="Gelatina central de Snoopy con paletas individuales">
+            <img src="image_1.jpg" alt="Gelatina de Snoopy">
             <div class="info-cliente">
-                <h4>Homenaje al 18 cumpleaños</h4>
-                <p class="p-desc">Kit completo con gelatina central de Snoopy y paletas individuales a juego.</p>
-                <p class="testimonio">"¡La mesa de dulces quedó espectacular con este diseño! La impresión es súper nítida y el sabor increíble. ¡Gracias!" - *Cumpleañera Feliz*</p>
+                <h4>Felices 18 Yeral</h4>
+                <p class="p-desc">Set de Snoopy: Gelatina central artística y paletas individuales personalizadas.</p>
+                <p class="testimonio">"¡La mesa de dulces quedó espectacular! La impresión es súper nítida y el sabor increíble."</p>
             </div>
         </div>
 
         <div class="foto-cliente">
-            <img src="image_2.png" alt="Gelatina de Goku con Esferas del Dragón">
+            <img src="image_2.jpg" alt="Gelatina de Goku">
             <div class="info-cliente">
-                <h4>Aventura Saiyajin para los 9 meses</h4>
-                <p class="p-desc">Diseño de Dragon Ball Z con gelatina de Goku y paletas 'Esferas del Dragón'.</p>
-                <p class="testimonio">"Buscábamos algo único para el cumple y Ge'lifiesta superó las expectativas. Las esferas del dragón fueron la sensación." - *Papás de Thiago*</p>
+                <h4>9 Meses Thiago</h4>
+                <p class="p-desc">Temática Dragon Ball Z con las esferas del dragón en gelatina gourmet.</p>
+                <p class="testimonio">"Las esferas del dragón fueron la sensación de la fiesta. ¡Un trabajo impecable!"</p>
             </div>
         </div>
 
         <div class="foto-cliente">
-            <img src="image_3.png" alt="Gelatina de Bluey con paletas de personajes">
+            <img src="image_3.jpg" alt="Gelatina de Bluey">
             <div class="info-cliente">
-                <h4>Magia en la Fiesta con Bluey</h4>
-                <p class="p-desc">Gelatina principal de Bluey acompañada de paletas con todos los personajes de la serie.</p>
-                <p class="testimonio">"Mi hijo no podía creerlo cuando vio su pastel de Bluey. ¡Estaba todo perfecto y muy detallado! Súper recomendado." - *Mamá de Mati*</p>
+                <h4>Mati con Bluey</h4>
+                <p class="p-desc">Diseño colorido de Bluey con paletas de todos los personajes de la serie.</p>
+                <p class="testimonio">"A mi hijo le encantó ver a todos los personajes. ¡Detalles que marcan la diferencia!"</p>
             </div>
         </div>
     </div>
 
     <div class="contacto">
-        <h2>¿Tienes un evento en mente?</h2>
-        <p>Hacemos realidad tus ideas comestibles con la mejor calidad en repostería.</p>
-        <a href="https://wa.me/522215561589" class="whatsapp-btn">Pedir presupuesto por WhatsApp</a>
+        <h2>¿Tienes un evento?</h2>
+        <p>Hacemos realidad tus ideas comestibles con la mejor calidad.</p>
+        <a href="https://wa.me/522215561589" class="whatsapp-btn">Pedir por WhatsApp</a>
     </div>
 </div>
 
