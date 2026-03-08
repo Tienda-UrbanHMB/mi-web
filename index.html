@@ -3,33 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda-UrbanHMB | Streetwear</title>
+    <title>Página de Joshua</title>
     <style>
-        body { font-family: sans-serif; background: #050505; color: white; margin: 0; text-align: center; }
-        header { background: #000; padding: 40px; border-bottom: 2px solid #ff4757; }
-        .productos { display: flex; flex-wrap: wrap; justify-content: center; padding: 20px; }
-        .tarjeta { background: #111; border: 1px solid #333; margin: 15px; padding: 20px; border-radius: 10px; width: 250px; }
-        .precio { color: #ff4757; font-size: 1.4rem; font-weight: bold; }
-        button { background: #ff4757; color: white; border: none; padding: 12px; border-radius: 5px; cursor: pointer; width: 100%; font-weight: bold; }
+        body { 
+            font-family: 'Arial', sans-serif; 
+            background: #000; 
+            color: white; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            height: 100vh; 
+            margin: 0; 
+        }
+        h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        p { font-size: 1.5rem; color: #ff4757; font-weight: bold; margin-bottom: 30px; }
+        .botones { display: flex; gap: 20px; }
+        button { 
+            background: #ff4757; 
+            color: white; 
+            border: none; 
+            padding: 15px 40px; 
+            font-size: 1.2rem; 
+            font-weight: bold; 
+            border-radius: 10px; 
+            cursor: pointer; 
+            transition: 0.3s;
+        }
+        button:hover { transform: scale(1.1); background: #ff6b81; }
     </style>
 </head>
 <body>
-    <header>
-        <h1>URBAN HMB</h1>
-        <p>CALIDAD Y ESTILO SIN LÍMITES</p>
-    </header>
-    <div class="productos">
-        <div class="tarjeta">
-            <h3>Playera Urban Black</h3>
-            <p class="precio">$399 MXN</p>
-            <button>Pedir por WhatsApp</button>
-        </div>
-        <div class="tarjeta">
-            <h3>Hoodie Premium</h3>
-            <p class="precio">$850 MXN</p>
-            <button>Pedir por WhatsApp</button>
-        </div>
+    <h1>Bienvenido a mi página, me llamo Joshua</h1>
+    <p>¿Eres gay?</p>
+    <div class="botones">
+        <button onclick="alert('¡Lo sabía!')">SÍ</button>
+        <button onclick="alert('Mientes...')">NO</button>
     </div>
 </body>
 </html>
-
