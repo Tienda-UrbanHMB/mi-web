@@ -19,9 +19,99 @@
             background: linear-gradient(135deg, #fef9fb 0%, #fff4f9 100%);
             color: #2d2d2d;
             line-height: 1.5;
+            position: relative;
+            overflow-x: hidden;
         }
 
-        /* Estilos Modernos y Elegantes */
+        /* TEXTO MÓVIL EN EL FONDO - NUEVO */
+        .fondo-movil {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Para que no interfiera con clics */
+            z-index: 0;
+            overflow: hidden;
+            opacity: 0.1; /* Muy sutil, como marca de agua */
+        }
+
+        .texto-vertical {
+            position: absolute;
+            font-size: 8vw; /* Tamaño responsivo */
+            font-weight: 800;
+            color: #ff4080;
+            white-space: nowrap;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            transform: rotate(-90deg) translateY(-50%); /* Rotación vertical */
+            transform-origin: left top;
+            animation: moverVertical 20s linear infinite;
+            text-shadow: 0 0 10px rgba(255, 64, 128, 0.3);
+            font-family: 'Arial Black', sans-serif;
+        }
+
+        /* Múltiples líneas para mejor efecto */
+        .texto-vertical:nth-child(1) {
+            top: 10%;
+            left: 2%;
+            animation-delay: 0s;
+            font-size: 10vw;
+            opacity: 0.5;
+        }
+
+        .texto-vertical:nth-child(2) {
+            top: 20%;
+            left: 15%;
+            animation-delay: -5s;
+            font-size: 12vw;
+            opacity: 0.4;
+            color: #ff85c1;
+        }
+
+        .texto-vertical:nth-child(3) {
+            top: 30%;
+            left: 25%;
+            animation-delay: -10s;
+            font-size: 9vw;
+            opacity: 0.3;
+            color: #e75480;
+        }
+
+        .texto-vertical:nth-child(4) {
+            top: 40%;
+            left: 5%;
+            animation-delay: -15s;
+            font-size: 14vw;
+            opacity: 0.2;
+            color: #ff69a5;
+        }
+
+        .texto-vertical:nth-child(5) {
+            top: 50%;
+            left: 20%;
+            animation-delay: -7s;
+            font-size: 11vw;
+            opacity: 0.35;
+            color: #ff4080;
+        }
+
+        @keyframes moverVertical {
+            0% {
+                transform: rotate(-90deg) translateY(100vh) translateX(-50%);
+            }
+            100% {
+                transform: rotate(-90deg) translateY(-100vh) translateX(-50%);
+            }
+        }
+
+        /* Ajuste para que el contenido principal esté sobre el fondo */
+        .modern-header, .container, .decoracion-puntos, footer {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Estilos Modernos y Elegantes (sin cambios) */
         .modern-header {
             background: linear-gradient(145deg, #ff69a5 0%, #ff4080 100%);
             padding: 3rem 1.5rem;
@@ -207,11 +297,14 @@
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: 1px solid rgba(255, 133, 193, 0.3);
             position: relative;
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.9);
         }
 
         .foto-cliente-moderna:hover {
             transform: scale(1.02);
             box-shadow: 0 30px 50px rgba(255, 64, 128, 0.3);
+            background: white;
         }
 
         .imagen-wrapper {
@@ -233,7 +326,7 @@
 
         .info-cliente-moderna {
             padding: 25px;
-            background: white;
+            background: transparent;
             position: relative;
         }
 
@@ -368,6 +461,10 @@
             .modern-header {
                 clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
             }
+
+            .texto-vertical {
+                font-size: 15vw;
+            }
         }
 
         @media (max-width: 480px) {
@@ -377,6 +474,11 @@
             
             .card-moderna h3 {
                 font-size: 1.5rem;
+            }
+
+            .texto-vertical {
+                font-size: 18vw;
+                letter-spacing: 5px;
             }
         }
 
@@ -395,6 +497,15 @@
     </style>
 </head>
 <body>
+
+<!-- TEXTO MÓVIL EN EL FONDO - NUEVO -->
+<div class="fondo-movil">
+    <div class="texto-vertical">Ge'lifiesta ✦</div>
+    <div class="texto-vertical">Ge'lifiesta ✦</div>
+    <div class="texto-vertical">Ge'lifiesta ✦</div>
+    <div class="texto-vertical">Ge'lifiesta ✦</div>
+    <div class="texto-vertical">Ge'lifiesta ✦</div>
+</div>
 
 <div class="decoracion-puntos"></div>
 
@@ -477,7 +588,7 @@
 </div>
 
 <!-- Decoración adicional (opcional) -->
-<div style="text-align: center; padding: 20px; color: #ff85c1; font-size: 0.9rem;">
+<div style="text-align: center; padding: 20px; color: #ff85c1; font-size: 0.9rem; position: relative; z-index: 2;">
     ✦ Gelatinas Gourmet con diseño personalizado ✦
 </div>
 
