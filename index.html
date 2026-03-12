@@ -44,7 +44,7 @@
             50% { opacity: 1; }
         }
 
-        /* TEXTO MÓVIL EN EL FONDO - AHORA CON NUEVAS ANIMACIONES */
+        /* TEXTO MÓVIL EN EL FONDO - AHORA VISIBLE Y ESPECTACULAR */
         .fondo-movil {
             position: fixed;
             top: 0;
@@ -74,7 +74,7 @@
             opacity: 0.9;
         }
 
-        /* Efecto neón para cada línea - AHORA CON ANIMACIÓN EXTRA DE COLOR */
+        /* Efecto neón para cada línea */
         .texto-vertical:nth-child(1) {
             top: 5%;
             left: -5%;
@@ -82,12 +82,6 @@
             font-size: 14vw;
             -webkit-text-stroke: 4px #ff1493;
             text-shadow: 0 0 40px #ff1493, 0 0 80px #ff69b4;
-            animation: moverVertical 25s linear infinite, cambioColor1 5s ease-in-out infinite;
-        }
-
-        @keyframes cambioColor1 {
-            0%, 100% { -webkit-text-stroke-color: #ff1493; text-shadow: 0 0 40px #ff1493, 0 0 80px #ff69b4; }
-            50% { -webkit-text-stroke-color: #ff69b4; text-shadow: 0 0 40px #ff69b4, 0 0 80px #ff1493; }
         }
 
         .texto-vertical:nth-child(2) {
@@ -98,12 +92,6 @@
             -webkit-text-stroke: 4px #ff4080;
             text-shadow: 0 0 50px #ff4080, 0 0 100px #ff69a5;
             opacity: 0.8;
-            animation: moverVertical 25s linear infinite -5s, cambioColor2 6s ease-in-out infinite;
-        }
-
-        @keyframes cambioColor2 {
-            0%, 100% { -webkit-text-stroke-color: #ff4080; text-shadow: 0 0 50px #ff4080, 0 0 100px #ff69a5; }
-            50% { -webkit-text-stroke-color: #ff69a5; text-shadow: 0 0 50px #ff69a5, 0 0 100px #ff4080; }
         }
 
         .texto-vertical:nth-child(3) {
@@ -113,12 +101,6 @@
             font-size: 18vw;
             -webkit-text-stroke: 5px #ff69b4;
             text-shadow: 0 0 60px #ff69b4, 0 0 120px #ff85c1;
-            animation: moverVertical 25s linear infinite -10s, cambioColor3 7s ease-in-out infinite;
-        }
-
-        @keyframes cambioColor3 {
-            0%, 100% { -webkit-text-stroke-color: #ff69b4; text-shadow: 0 0 60px #ff69b4, 0 0 120px #ff85c1; }
-            50% { -webkit-text-stroke-color: #ff85c1; text-shadow: 0 0 60px #ff85c1, 0 0 120px #ff69b4; }
         }
 
         .texto-vertical:nth-child(4) {
@@ -128,12 +110,6 @@
             font-size: 20vw;
             -webkit-text-stroke: 5px #ff34b3;
             text-shadow: 0 0 70px #ff34b3, 0 0 140px #ff1493;
-            animation: moverVertical 25s linear infinite -15s, cambioColor4 8s ease-in-out infinite;
-        }
-
-        @keyframes cambioColor4 {
-            0%, 100% { -webkit-text-stroke-color: #ff34b3; text-shadow: 0 0 70px #ff34b3, 0 0 140px #ff1493; }
-            50% { -webkit-text-stroke-color: #ff1493; text-shadow: 0 0 70px #ff1493, 0 0 140px #ff34b3; }
         }
 
         .texto-vertical:nth-child(5) {
@@ -143,12 +119,6 @@
             font-size: 22vw;
             -webkit-text-stroke: 6px #ff00aa;
             text-shadow: 0 0 80px #ff00aa, 0 0 160px #ff69a5;
-            animation: moverVertical 25s linear infinite -7s, cambioColor5 4s ease-in-out infinite;
-        }
-
-        @keyframes cambioColor5 {
-            0%, 100% { -webkit-text-stroke-color: #ff00aa; text-shadow: 0 0 80px #ff00aa, 0 0 160px #ff69a5; }
-            50% { -webkit-text-stroke-color: #ff69a5; text-shadow: 0 0 80px #ff69a5, 0 0 160px #ff00aa; }
         }
 
         .texto-vertical:nth-child(6) {
@@ -158,12 +128,6 @@
             font-size: 15vw;
             -webkit-text-stroke: 4px #ff75c0;
             text-shadow: 0 0 45px #ff75c0, 0 0 90px #ff1493;
-            animation: moverVertical 25s linear infinite -3s, cambioColor6 5.5s ease-in-out infinite;
-        }
-
-        @keyframes cambioColor6 {
-            0%, 100% { -webkit-text-stroke-color: #ff75c0; text-shadow: 0 0 45px #ff75c0, 0 0 90px #ff1493; }
-            50% { -webkit-text-stroke-color: #ff1493; text-shadow: 0 0 45px #ff1493, 0 0 90px #ff75c0; }
         }
 
         @keyframes moverVertical {
@@ -175,7 +139,7 @@
             }
         }
 
-        /* Header con nuevas animaciones de entrada */
+        /* Header aún más espectacular */
         .modern-header {
             background: linear-gradient(145deg, rgba(255, 105, 165, 0.95) 0%, rgba(255, 64, 128, 0.95) 100%);
             padding: 4rem 1.5rem;
@@ -187,12 +151,6 @@
             clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
             backdrop-filter: blur(5px);
             border-bottom: 4px solid #ffffff30;
-            animation: headerGlow 3s ease-in-out infinite;
-        }
-
-        @keyframes headerGlow {
-            0%, 100% { box-shadow: 0 20px 40px rgba(255, 64, 128, 0.5); }
-            50% { box-shadow: 0 30px 60px rgba(255, 64, 128, 0.8), 0 0 40px #ff69a5; }
         }
 
         .modern-header::before {
@@ -205,12 +163,6 @@
             transform: rotate(20deg);
             font-family: serif;
             white-space: nowrap;
-            animation: girarEstrellas 15s linear infinite;
-        }
-
-        @keyframes girarEstrellas {
-            0% { transform: rotate(20deg); }
-            100% { transform: rotate(380deg); }
         }
 
         .logo-text {
@@ -221,16 +173,11 @@
             letter-spacing: -1px;
             position: relative;
             display: inline-block;
-            animation: fadeInDown 1s ease, flotar 4s ease-in-out infinite;
+            animation: fadeInDown 1s ease;
             background: linear-gradient(135deg, #ffffff, #ffe6f0);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-shadow: 2px 2px 20px #ff69b4;
-        }
-
-        @keyframes flotar {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
         }
 
         .logo-text span {
@@ -241,12 +188,6 @@
             text-shadow: 2px 2px 0 #b32e5a;
             -webkit-text-fill-color: white;
             background: none;
-            animation: aparecer 1.5s ease;
-        }
-
-        @keyframes aparecer {
-            0% { opacity: 0; letter-spacing: 20px; }
-            100% { opacity: 1; letter-spacing: 8px; }
         }
 
         @keyframes fadeInDown {
@@ -274,12 +215,6 @@
             border-radius: 50px;
             backdrop-filter: blur(5px);
             border: 2px solid #ffffff50;
-            animation: latido 3s ease-in-out infinite;
-        }
-
-        @keyframes latido {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); background: rgba(0,0,0,0.3); }
         }
 
         .container {
@@ -290,7 +225,7 @@
             z-index: 2;
         }
 
-        /* Servicios con efecto vidrio neón - NUEVAS ANIMACIONES */
+        /* Servicios con efecto vidrio neón */
         .servicios-modernos {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -309,26 +244,6 @@
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
-            animation: entradaTarjetas 1s ease;
-        }
-
-        .card-moderna:nth-child(1) {
-            animation-delay: 0.2s;
-        }
-
-        .card-moderna:nth-child(2) {
-            animation-delay: 0.4s;
-        }
-
-        @keyframes entradaTarjetas {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
         }
 
         .card-moderna::before {
@@ -341,23 +256,12 @@
             background: linear-gradient(145deg, #ff69a5, #ff4080);
             opacity: 0.2;
             z-index: -1;
-            transition: opacity 0.4s ease;
         }
 
         .card-moderna:hover {
             transform: translateY(-15px) scale(1.02);
             box-shadow: 0 40px 70px rgba(255, 64, 128, 0.6), inset 0 0 50px #ff85c1;
             border-color: #ffffff;
-        }
-
-        .card-moderna:hover::before {
-            opacity: 0.4;
-            animation: pulsarFondo 1s ease infinite;
-        }
-
-        @keyframes pulsarFondo {
-            0%, 100% { opacity: 0.4; }
-            50% { opacity: 0.6; }
         }
 
         .card-moderna h3 {
@@ -385,21 +289,9 @@
             box-shadow: 0 15px 30px #ff1493, 0 0 30px #ffffff80;
             border: 2px solid white;
             font-size: 1.2rem;
-            animation: brilloHighlight 2s ease-in-out infinite;
-            transition: all 0.3s ease;
         }
 
-        @keyframes brilloHighlight {
-            0%, 100% { box-shadow: 0 15px 30px #ff1493, 0 0 30px #ffffff80; }
-            50% { box-shadow: 0 20px 40px #ff1493, 0 0 50px #ffffff; }
-        }
-
-        .highlight-moderno:hover {
-            transform: scale(1.1);
-            animation: none;
-        }
-
-        /* Títulos de sección con neón - NUEVAS ANIMACIONES */
+        /* Títulos de sección con neón */
         .titulo-seccion {
             text-align: center;
             font-size: 3.5rem;
@@ -408,12 +300,6 @@
             font-weight: 800;
             text-shadow: 0 0 20px #ff69a5, 0 0 40px #ff4080, 4px 4px 0 #b32e5a;
             position: relative;
-            animation: resplandorTitulo 3s ease-in-out infinite;
-        }
-
-        @keyframes resplandorTitulo {
-            0%, 100% { text-shadow: 0 0 20px #ff69a5, 0 0 40px #ff4080, 4px 4px 0 #b32e5a; }
-            50% { text-shadow: 0 0 40px #ff69a5, 0 0 80px #ff4080, 4px 4px 0 #b32e5a; }
         }
 
         .titulo-seccion::after {
@@ -424,12 +310,6 @@
             margin-top: 10px;
             text-shadow: 0 0 20px #ffffff;
             letter-spacing: 10px;
-            animation: girarEstrellasTitulo 10s linear infinite;
-        }
-
-        @keyframes girarEstrellasTitulo {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
         }
 
         .subtitulo-seccion {
@@ -448,26 +328,9 @@
             margin-right: auto;
             backdrop-filter: blur(5px);
             border: 2px solid #ffffff50;
-            animation: deslizarSubtitulo 1s ease, parpadeoBorde 2s ease-in-out infinite;
         }
 
-        @keyframes deslizarSubtitulo {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes parpadeoBorde {
-            0%, 100% { border-color: #ffffff50; }
-            50% { border-color: #ff85c1; }
-        }
-
-        /* Galería con efecto brillante - NUEVAS ANIMACIONES */
+        /* Galería con efecto brillante */
         .galeria-grid-moderna {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -484,30 +347,6 @@
             border: 2px solid #ff85c1;
             transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
-            animation: subirTarjetas 1s ease;
-        }
-
-        .foto-cliente-moderna:nth-child(1) {
-            animation-delay: 0.1s;
-        }
-
-        .foto-cliente-moderna:nth-child(2) {
-            animation-delay: 0.3s;
-        }
-
-        .foto-cliente-moderna:nth-child(3) {
-            animation-delay: 0.5s;
-        }
-
-        @keyframes subirTarjetas {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .foto-cliente-moderna:hover {
@@ -532,7 +371,7 @@
         }
 
         .foto-cliente-moderna:hover img {
-            transform: scale(1.15) rotate(1deg);
+            transform: scale(1.15);
         }
 
         .info-cliente-moderna {
@@ -547,11 +386,6 @@
             margin-bottom: 15px;
             font-weight: 700;
             text-shadow: 0 0 15px #ff69a5;
-            transition: text-shadow 0.3s ease;
-        }
-
-        .foto-cliente-moderna:hover h4 {
-            text-shadow: 0 0 30px #ff69a5;
         }
 
         .p-desc-moderna {
@@ -569,12 +403,6 @@
             content: "✨";
             font-size: 1.5rem;
             filter: drop-shadow(0 0 10px gold);
-            animation: girarEstrella 3s linear infinite;
-        }
-
-        @keyframes girarEstrella {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
         }
 
         .testimonio-moderno {
@@ -590,12 +418,6 @@
             box-shadow: inset 0 0 30px #ff69a5;
             backdrop-filter: blur(5px);
             border: 1px solid #ffffff50;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .testimonio-moderno:hover {
-            transform: translateX(5px);
-            box-shadow: inset 0 0 40px #ff69a5;
         }
 
         .testimonio-moderno b {
@@ -607,21 +429,15 @@
             border-radius: 30px;
             display: inline-block;
             margin-top: 5px;
-            animation: brilloNombre 2s ease-in-out infinite;
         }
 
-        @keyframes brilloNombre {
-            0%, 100% { background: #ff1493; }
-            50% { background: #ff4080; }
-        }
-
-        /* Contacto ultra llamativo - NUEVAS ANIMACIONES */
+        /* Contacto ultra llamativo */
         .contacto-moderno {
             margin-top: 80px;
             text-align: center;
             background: linear-gradient(135deg, #ff1493, #ff4080, #ff69a5);
             background-size: 300% 300%;
-            animation: gradientMove 5s ease infinite, latidoContacto 2s ease-in-out infinite;
+            animation: gradientMove 5s ease infinite;
             color: white;
             padding: 70px 40px;
             border-radius: 70px 70px 40px 40px;
@@ -629,11 +445,6 @@
             position: relative;
             overflow: hidden;
             border: 4px solid #ffffff80;
-        }
-
-        @keyframes latidoContacto {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.02); }
         }
 
         @keyframes gradientMove {
@@ -653,12 +464,6 @@
             white-space: nowrap;
             color: #ffffff;
             text-shadow: 0 0 30px #ffffff;
-            animation: flotarIconos 6s ease-in-out infinite;
-        }
-
-        @keyframes flotarIconos {
-            0%, 100% { transform: rotate(-10deg) translateY(0); }
-            50% { transform: rotate(-5deg) translateY(-20px); }
         }
 
         .contacto-moderno h2 {
@@ -667,13 +472,6 @@
             font-weight: 800;
             text-shadow: 5px 5px 0 #b32e5a, 0 0 50px #ffffff;
             position: relative;
-            animation: vibrar 0.5s ease-in-out infinite;
-        }
-
-        @keyframes vibrar {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(1deg); }
-            75% { transform: rotate(-1deg); }
         }
 
         .whatsapp-btn-moderno {
@@ -713,15 +511,9 @@
             font-size: 2.5rem;
             vertical-align: middle;
             filter: drop-shadow(0 0 10px white);
-            animation: saltar 1s ease infinite;
         }
 
-        @keyframes saltar {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-
-        /* Pie de página - NUEVAS ANIMACIONES */
+        /* Pie de página */
         .footer-text {
             text-align: center;
             padding: 30px;
@@ -736,12 +528,6 @@
             margin-top: 40px;
             border-radius: 60px;
             border: 2px solid #ffffff30;
-            animation: brilloFooter 3s ease-in-out infinite;
-        }
-
-        @keyframes brilloFooter {
-            0%, 100% { background: rgba(255,64,128,0.2); }
-            50% { background: rgba(255,64,128,0.4); border-color: #ff85c1; }
         }
 
         /* Responsive */
@@ -867,5 +653,31 @@
         <div class="foto-cliente-moderna">
             <div class="imagen-wrapper">
                 <img src="image_3.png" alt="Magia en la Fiesta con Bluey">
-            </
+            </div>
+            <div class="info-cliente-moderna">
+                <h4>🐶 Magia en la Fiesta con Bluey</h4>
+                <p class="p-desc-moderna">Gelatina principal de Bluey acompañada de paletas con todos los personajes.</p>
+                <div class="testimonio-moderno">
+                    "Mi hijo no podía creerlo cuando vio su pastel de Bluey. ¡Perfecto y muy detallado!" - <b>Mamá de Mati</b>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Contacto -->
+    <div class="contacto-moderno">
+        <h2>¿Tienes un evento? 🎉</h2>
+        <a href="https://wa.me/522226038991" class="whatsapp-btn-moderno">
+            <i>📱</i> Pedir por WhatsApp
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-text">
+        ✦ Gelatinas Gourmet con diseño personalizado ✦
+    </div>
+</div>
+
+</body>
+</html>
+</html>
