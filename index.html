@@ -1,683 +1,644 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ge'lifiesta | Gelatinas Gourmet de Diseño</title>
+===================================
+   RESET Y CONFIGURACIÓN BASE
+   =================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0a0a0a;
+    color: #ffffff;
+    line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* ===================================
+   FONDO ANIMADO
+   =================================== */
+.fondo-brillante {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 30%, #ff69a5 0%, transparent 30%),
+        radial-gradient(circle at 80% 70%, #ff4080 0%, transparent 35%),
+        radial-gradient(circle at 40% 80%, #ff85c1 0%, transparent 40%),
+        #0a0a0a;
+    opacity: 0.8;
+    z-index: -2;
+    animation: brilloPulsante 8s ease-in-out infinite;
+}
+
+@keyframes brilloPulsante {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+/* ===================================
+   TEXTO MÓVIL DE FONDO
+   =================================== */
+.fondo-movil {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.texto-vertical {
+    position: absolute;
+    font-size: 12vw;
+    font-weight: 900;
+    color: transparent;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 20px;
+    transform: rotate(-90deg) translateY(-50%);
+    transform-origin: left top;
+    animation: moverVertical 25s linear infinite;
+    -webkit-text-stroke: 3px #ff69a5;
+    text-stroke: 3px #ff69a5;
+    text-shadow: 0 0 30px #ff4080, 0 0 60px #ff85c1;
+    font-family: 'Arial Black', 'Impact', sans-serif;
+    opacity: 0.9;
+}
+
+.texto-vertical:nth-child(1) {
+    top: 5%;
+    left: -5%;
+    animation-delay: 0s;
+    font-size: 14vw;
+    -webkit-text-stroke: 4px #ff1493;
+    text-shadow: 0 0 40px #ff1493, 0 0 80px #ff69b4;
+}
+
+.texto-vertical:nth-child(2) {
+    top: 15%;
+    left: 5%;
+    animation-delay: -5s;
+    font-size: 16vw;
+    -webkit-text-stroke: 4px #ff4080;
+    text-shadow: 0 0 50px #ff4080, 0 0 100px #ff69a5;
+    opacity: 0.8;
+}
+
+.texto-vertical:nth-child(3) {
+    top: 25%;
+    left: -10%;
+    animation-delay: -10s;
+    font-size: 18vw;
+    -webkit-text-stroke: 5px #ff69b4;
+    text-shadow: 0 0 60px #ff69b4, 0 0 120px #ff85c1;
+}
+
+.texto-vertical:nth-child(4) {
+    top: 35%;
+    left: 0%;
+    animation-delay: -15s;
+    font-size: 20vw;
+    -webkit-text-stroke: 5px #ff34b3;
+    text-shadow: 0 0 70px #ff34b3, 0 0 140px #ff1493;
+}
+
+.texto-vertical:nth-child(5) {
+    top: 45%;
+    left: -15%;
+    animation-delay: -7s;
+    font-size: 22vw;
+    -webkit-text-stroke: 6px #ff00aa;
+    text-shadow: 0 0 80px #ff00aa, 0 0 160px #ff69a5;
+}
+
+.texto-vertical:nth-child(6) {
+    top: 55%;
+    left: 8%;
+    animation-delay: -3s;
+    font-size: 15vw;
+    -webkit-text-stroke: 4px #ff75c0;
+    text-shadow: 0 0 45px #ff75c0, 0 0 90px #ff1493;
+}
+
+@keyframes moverVertical {
+    0% {
+        transform: rotate(-90deg) translateY(120vh) translateX(-30%);
+    }
+    100% {
+        transform: rotate(-90deg) translateY(-120vh) translateX(-30%);
+    }
+}
+
+/* ===================================
+   HEADER
+   =================================== */
+.modern-header {
+    background: linear-gradient(145deg, rgba(255, 105, 165, 0.95) 0%, rgba(255, 64, 128, 0.95) 100%);
+    padding: 4rem 1.5rem;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(255, 64, 128, 0.5);
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    backdrop-filter: blur(5px);
+    border-bottom: 4px solid rgba(255, 255, 255, 0.3);
+}
+
+.modern-header::before {
+    content: "✦ ✦ ✦";
+    font-size: 20rem;
+    color: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    top: -80px;
+    right: -50px;
+    transform: rotate(20deg);
+    font-family: serif;
+    white-space: nowrap;
+}
+
+.logo-text {
+    font-size: 5rem;
+    font-weight: 900;
+    margin: 0;
+    letter-spacing: -1px;
+    position: relative;
+    display: inline-block;
+    animation: fadeInDown 1s ease;
+    background: linear-gradient(135deg, #ffffff, #ffe6f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(6px 6px 0 #b32e5a) drop-shadow(0 0 40px #ffffff);
+}
+
+.logo-text span {
+    font-size: 2.5rem;
+    display: block;
+    font-weight: 300;
+    letter-spacing: 8px;
+    -webkit-text-fill-color: white;
+    background: none;
+    filter: drop-shadow(2px 2px 0 #b32e5a);
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tagline {
+    font-size: 1.4rem;
+    margin-top: 1rem;
+    font-weight: 300;
+    letter-spacing: 3px;
+    position: relative;
+    text-shadow: 2px 2px 0 #b32e5a;
+    background: rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+/* ===================================
+   CONTENEDOR PRINCIPAL
+   =================================== */
+.container {
+    max-width: 1300px;
+    margin: -70px auto 0;
+    padding: 0 30px 60px;
+    position: relative;
+    z-index: 2;
+}
+
+/* ===================================
+   SERVICIOS
+   =================================== */
+.servicios-modernos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.card-moderna {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 40px;
+    padding: 45px 30px;
+    text-align: center;
+    box-shadow: 
+        0 25px 50px rgba(255, 64, 128, 0.4),
+        inset 0 0 30px #ff69a5;
+    border: 2px solid #ff69a5;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-moderna::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(145deg, #ff69a5, #ff4080);
+    opacity: 0.2;
+    z-index: -1;
+}
+
+.card-moderna:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 
+        0 40px 70px rgba(255, 64, 128, 0.6),
+        inset 0 0 50px #ff85c1;
+    border-color: #ffffff;
+}
+
+.card-moderna h3 {
+    color: #ffffff;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 0 0 20px #ff69a5;
+}
+
+.card-moderna p {
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.highlight-moderno {
+    background: linear-gradient(145deg, #ff69a5, #ff1493);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 60px;
+    font-weight: 700;
+    display: inline-block;
+    box-shadow: 
+        0 15px 30px #ff1493,
+        0 0 30px rgba(255, 255, 255, 0.8);
+    border: 2px solid white;
+    font-size: 1.2rem;
+}
+
+/* ===================================
+   TÍTULOS DE SECCIÓN
+   =================================== */
+.galeria-section {
+    margin-top: 60px;
+}
+
+.titulo-seccion {
+    text-align: center;
+    font-size: 3.5rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-weight: 800;
+    text-shadow: 
+        0 0 20px #ff69a5,
+        0 0 40px #ff4080,
+        4px 4px 0 #b32e5a;
+    position: relative;
+}
+
+.titulo-seccion::after {
+    content: "✦ ✦ ✦";
+    font-size: 2rem;
+    color: #ff85c1;
+    display: block;
+    margin-top: 10px;
+    text-shadow: 0 0 20px #ffffff;
+    letter-spacing: 10px;
+}
+
+.subtitulo-seccion {
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.6rem;
+    margin-bottom: 50px;
+    font-weight: 300;
+    letter-spacing: 4px;
+    text-shadow: 0 0 15px #ff85c1;
+    background: rgba(255, 64, 128, 0.3);
+    display: inline-block;
+    padding: 10px 40px;
+    border-radius: 60px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+/* ===================================
+   GALERÍA
+   =================================== */
+.galeria-grid-moderna {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin: 50px 0;
+}
+
+.foto-cliente-moderna {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    border-radius: 45px 45px 35px 35px;
+    overflow: hidden;
+    box-shadow: 
+        0 30px 50px rgba(255, 64, 128, 0.5),
+        inset 0 0 30px rgba(255, 255, 255, 0.3);
+    border: 2px solid #ff85c1;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.foto-cliente-moderna:hover {
+    transform: scale(1.03) translateY(-10px);
+    box-shadow: 
+        0 50px 80px #ff4080,
+        inset 0 0 50px #ffffff;
+    border-color: #ffffff;
+}
+
+.imagen-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 320px;
+    border-bottom: 3px solid #ff85c1;
+}
+
+.foto-cliente-moderna img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.foto-cliente-moderna:hover img {
+    transform: scale(1.15);
+}
+
+.info-cliente-moderna {
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.info-cliente-moderna h4 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 0 0 15px #ff69a5;
+}
+
+.p-desc-moderna {
+    color: #ffd9e9;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.p-desc-moderna::before {
+    content: "✨";
+    font-size: 1.5rem;
+    filter: drop-shadow(0 0 10px gold);
+}
+
+.testimonio-moderno {
+    font-style: italic;
+    color: #ffffff;
+    background: rgba(255, 64, 128, 0.3);
+    padding: 25px;
+    border-radius: 25px;
+    margin-top: 20px;
+    border-left: 6px solid #ff85c1;
+    font-size: 1rem;
+    line-height: 1.7;
+    box-shadow: inset 0 0 30px #ff69a5;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.testimonio-moderno cite {
+    color: #ffffff;
+    font-style: normal;
+    text-shadow: 0 0 10px #ff69a5;
+    background: #ff1493;
+    padding: 3px 12px;
+    border-radius: 30px;
+    display: inline-block;
+    margin-top: 5px;
+    font-weight: 600;
+}
+
+/* ===================================
+   CONTACTO
+   =================================== */
+.contacto-moderno {
+    margin-top: 80px;
+    text-align: center;
+    background: linear-gradient(135deg, #ff1493, #ff4080, #ff69a5);
+    background-size: 300% 300%;
+    animation: gradientMove 5s ease infinite;
+    color: white;
+    padding: 70px 40px;
+    border-radius: 70px 70px 40px 40px;
+    box-shadow: 
+        0 40px 70px #ff1493,
+        0 0 100px #ff69a5;
+    position: relative;
+    overflow: hidden;
+    border: 4px solid rgba(255, 255, 255, 0.8);
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.contacto-moderno::before {
+    content: "🧁 🎂 🍰 🍩";
+    font-size: 12rem;
+    position: absolute;
+    bottom: -40px;
+    right: -20px;
+    opacity: 0.2;
+    transform: rotate(-10deg);
+    white-space: nowrap;
+    color: #ffffff;
+    text-shadow: 0 0 30px #ffffff;
+}
+
+.contacto-moderno h2 {
+    font-size: 4rem;
+    margin-bottom: 30px;
+    font-weight: 800;
+    text-shadow: 
+        5px 5px 0 #b32e5a,
+        0 0 50px #ffffff;
+    position: relative;
+}
+
+.whatsapp-btn-moderno {
+    background: #25d366;
+    color: white;
+    padding: 25px 60px;
+    text-decoration: none;
+    border-radius: 80px;
+    font-weight: bold;
+    font-size: 2rem;
+    display: inline-block;
+    margin-top: 30px;
+    box-shadow: 
+        0 30px 50px rgba(37, 211, 102, 0.6),
+        0 0 60px #25d366;
+    transition: all 0.4s ease;
+    border: 4px solid white;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 2;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { 
+        transform: scale(1);
+    }
+    50% { 
+        transform: scale(1.05);
+        box-shadow: 
+            0 40px 70px #25d366,
+            0 0 100px #25d366;
+    }
+    100% { 
+        transform: scale(1);
+    }
+}
+
+.whatsapp-btn-moderno:hover {
+    background: #20b859;
+    transform: scale(1.1);
+    box-shadow: 
+        0 50px 80px #20b859,
+        0 0 150px #20b859;
+    animation: none;
+}
+
+.whatsapp-icon {
+    margin-right: 15px;
+    font-size: 2.5rem;
+    vertical-align: middle;
+    filter: drop-shadow(0 0 10px white);
+}
+
+/* ===================================
+   FOOTER
+   =================================== */
+.footer-text {
+    text-align: center;
+    padding: 30px;
+    color: #ffffff;
+    font-size: 1.1rem;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 0 15px #ff69a5;
+    letter-spacing: 3px;
+    background: rgba(255, 64, 128, 0.2);
+    backdrop-filter: blur(5px);
+    margin-top: 40px;
+    border-radius: 60px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* ===================================
+   RESPONSIVE
+   =================================== */
+@media (max-width: 768px) {
+    .logo-text {
+        font-size: 3.5rem;
+    }
     
-    <link rel="icon" type="image/png" href="logo.png">
+    .logo-text span {
+        font-size: 1.8rem;
+    }
     
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #0a0a0a;
-            color: #ffffff;
-            line-height: 1.5;
-            position: relative;
-            overflow-x: hidden;
-        }
-
-        /* Fondo con partículas brillantes */
-        .fondo-brillante {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 20% 30%, #ff69a5 0%, transparent 30%),
-                        radial-gradient(circle at 80% 70%, #ff4080 0%, transparent 35%),
-                        radial-gradient(circle at 40% 80%, #ff85c1 0%, transparent 40%),
-                        #0a0a0a;
-            opacity: 0.8;
-            z-index: -2;
-            animation: brilloPulsante 8s ease-in-out infinite;
-        }
-
-        @keyframes brilloPulsante {
-            0%, 100% { opacity: 0.6; }
-            50% { opacity: 1; }
-        }
-
-        /* TEXTO MÓVIL EN EL FONDO - AHORA VISIBLE Y ESPECTACULAR */
-        .fondo-movil {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .texto-vertical {
-            position: absolute;
-            font-size: 12vw;
-            font-weight: 900;
-            color: transparent;
-            white-space: nowrap;
-            text-transform: uppercase;
-            letter-spacing: 20px;
-            transform: rotate(-90deg) translateY(-50%);
-            transform-origin: left top;
-            animation: moverVertical 25s linear infinite;
-            -webkit-text-stroke: 3px #ff69a5;
-            text-stroke: 3px #ff69a5;
-            text-shadow: 0 0 30px #ff4080, 0 0 60px #ff85c1;
-            font-family: 'Arial Black', 'Impact', sans-serif;
-            opacity: 0.9;
-        }
-
-        /* Efecto neón para cada línea */
-        .texto-vertical:nth-child(1) {
-            top: 5%;
-            left: -5%;
-            animation-delay: 0s;
-            font-size: 14vw;
-            -webkit-text-stroke: 4px #ff1493;
-            text-shadow: 0 0 40px #ff1493, 0 0 80px #ff69b4;
-        }
-
-        .texto-vertical:nth-child(2) {
-            top: 15%;
-            left: 5%;
-            animation-delay: -5s;
-            font-size: 16vw;
-            -webkit-text-stroke: 4px #ff4080;
-            text-shadow: 0 0 50px #ff4080, 0 0 100px #ff69a5;
-            opacity: 0.8;
-        }
-
-        .texto-vertical:nth-child(3) {
-            top: 25%;
-            left: -10%;
-            animation-delay: -10s;
-            font-size: 18vw;
-            -webkit-text-stroke: 5px #ff69b4;
-            text-shadow: 0 0 60px #ff69b4, 0 0 120px #ff85c1;
-        }
-
-        .texto-vertical:nth-child(4) {
-            top: 35%;
-            left: 0%;
-            animation-delay: -15s;
-            font-size: 20vw;
-            -webkit-text-stroke: 5px #ff34b3;
-            text-shadow: 0 0 70px #ff34b3, 0 0 140px #ff1493;
-        }
-
-        .texto-vertical:nth-child(5) {
-            top: 45%;
-            left: -15%;
-            animation-delay: -7s;
-            font-size: 22vw;
-            -webkit-text-stroke: 6px #ff00aa;
-            text-shadow: 0 0 80px #ff00aa, 0 0 160px #ff69a5;
-        }
-
-        .texto-vertical:nth-child(6) {
-            top: 55%;
-            left: 8%;
-            animation-delay: -3s;
-            font-size: 15vw;
-            -webkit-text-stroke: 4px #ff75c0;
-            text-shadow: 0 0 45px #ff75c0, 0 0 90px #ff1493;
-        }
-
-        @keyframes moverVertical {
-            0% {
-                transform: rotate(-90deg) translateY(120vh) translateX(-30%);
-            }
-            100% {
-                transform: rotate(-90deg) translateY(-120vh) translateX(-30%);
-            }
-        }
-
-        /* Header aún más espectacular */
-        .modern-header {
-            background: linear-gradient(145deg, rgba(255, 105, 165, 0.95) 0%, rgba(255, 64, 128, 0.95) 100%);
-            padding: 4rem 1.5rem;
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(255, 64, 128, 0.5);
-            clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
-            backdrop-filter: blur(5px);
-            border-bottom: 4px solid #ffffff30;
-        }
-
-        .modern-header::before {
-            content: "✦ ✦ ✦";
-            font-size: 20rem;
-            color: rgba(255, 255, 255, 0.2);
-            position: absolute;
-            top: -80px;
-            right: -50px;
-            transform: rotate(20deg);
-            font-family: serif;
-            white-space: nowrap;
-        }
-
-        .logo-text {
-            font-size: 5rem;
-            font-weight: 900;
-            margin: 0;
-            text-shadow: 6px 6px 0 #b32e5a, 0 0 40px #ffffff;
-            letter-spacing: -1px;
-            position: relative;
-            display: inline-block;
-            animation: fadeInDown 1s ease;
-            background: linear-gradient(135deg, #ffffff, #ffe6f0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 2px 2px 20px #ff69b4;
-        }
-
-        .logo-text span {
-            font-size: 2.5rem;
-            display: block;
-            font-weight: 300;
-            letter-spacing: 8px;
-            text-shadow: 2px 2px 0 #b32e5a;
-            -webkit-text-fill-color: white;
-            background: none;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .tagline {
-            font-size: 1.4rem;
-            opacity: 1;
-            margin-top: 1rem;
-            font-weight: 300;
-            letter-spacing: 3px;
-            position: relative;
-            text-shadow: 2px 2px 0 #b32e5a;
-            background: rgba(0,0,0,0.2);
-            display: inline-block;
-            padding: 10px 30px;
-            border-radius: 50px;
-            backdrop-filter: blur(5px);
-            border: 2px solid #ffffff50;
-        }
-
-        .container {
-            max-width: 1300px;
-            margin: -70px auto 0;
-            padding: 0 30px 60px;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Servicios con efecto vidrio neón */
-        .servicios-modernos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 80px;
-        }
-
-        .card-moderna {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            border-radius: 40px;
-            padding: 45px 30px;
-            text-align: center;
-            box-shadow: 0 25px 50px rgba(255, 64, 128, 0.4), inset 0 0 30px #ff69a5;
-            border: 2px solid #ff69a5;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card-moderna::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(145deg, #ff69a5, #ff4080);
-            opacity: 0.2;
-            z-index: -1;
-        }
-
-        .card-moderna:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 40px 70px rgba(255, 64, 128, 0.6), inset 0 0 50px #ff85c1;
-            border-color: #ffffff;
-        }
-
-        .card-moderna h3 {
-            color: #ffffff;
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-            text-shadow: 0 0 20px #ff69a5;
-        }
-
-        .card-moderna p {
-            color: #ffffff;
-            margin-bottom: 25px;
-            font-size: 1.2rem;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
-        }
-
-        .highlight-moderno {
-            background: linear-gradient(145deg, #ff69a5, #ff1493);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 60px;
-            font-weight: 700;
-            display: inline-block;
-            box-shadow: 0 15px 30px #ff1493, 0 0 30px #ffffff80;
-            border: 2px solid white;
-            font-size: 1.2rem;
-        }
-
-        /* Títulos de sección con neón */
-        .titulo-seccion {
-            text-align: center;
-            font-size: 3.5rem;
-            color: #ffffff;
-            margin-bottom: 15px;
-            font-weight: 800;
-            text-shadow: 0 0 20px #ff69a5, 0 0 40px #ff4080, 4px 4px 0 #b32e5a;
-            position: relative;
-        }
-
-        .titulo-seccion::after {
-            content: "✦ ✦ ✦";
-            font-size: 2rem;
-            color: #ff85c1;
-            display: block;
-            margin-top: 10px;
-            text-shadow: 0 0 20px #ffffff;
-            letter-spacing: 10px;
-        }
-
-        .subtitulo-seccion {
-            text-align: center;
-            color: #ffffff;
-            font-size: 1.6rem;
-            margin-bottom: 50px;
-            font-weight: 300;
-            letter-spacing: 4px;
-            text-shadow: 0 0 15px #ff85c1;
-            background: rgba(255,64,128,0.3);
-            display: inline-block;
-            padding: 10px 40px;
-            border-radius: 60px;
-            margin-left: auto;
-            margin-right: auto;
-            backdrop-filter: blur(5px);
-            border: 2px solid #ffffff50;
-        }
-
-        /* Galería con efecto brillante */
-        .galeria-grid-moderna {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin: 50px 0;
-        }
-
-        .foto-cliente-moderna {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(15px);
-            border-radius: 45px 45px 35px 35px;
-            overflow: hidden;
-            box-shadow: 0 30px 50px rgba(255, 64, 128, 0.5), inset 0 0 30px #ffffff30;
-            border: 2px solid #ff85c1;
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-        }
-
-        .foto-cliente-moderna:hover {
-            transform: scale(1.03) translateY(-10px);
-            box-shadow: 0 50px 80px #ff4080, inset 0 0 50px #ffffff;
-            border-color: #ffffff;
-        }
-
-        .imagen-wrapper {
-            position: relative;
-            overflow: hidden;
-            height: 320px;
-            border-bottom: 3px solid #ff85c1;
-        }
-
-        .foto-cliente-moderna img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.8s ease;
-            filter: brightness(1.1) contrast(1.1);
-        }
-
-        .foto-cliente-moderna:hover img {
-            transform: scale(1.15);
-        }
-
-        .info-cliente-moderna {
-            padding: 30px;
-            background: rgba(0,0,0,0.3);
-            position: relative;
-        }
-
-        .info-cliente-moderna h4 {
-            color: #ffffff;
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            font-weight: 700;
-            text-shadow: 0 0 15px #ff69a5;
-        }
-
-        .p-desc-moderna {
-            color: #ffd9e9;
-            font-weight: 600;
-            margin-bottom: 20px;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-shadow: 0 2px 5px #00000050;
-        }
-
-        .p-desc-moderna::before {
-            content: "✨";
-            font-size: 1.5rem;
-            filter: drop-shadow(0 0 10px gold);
-        }
-
-        .testimonio-moderno {
-            font-style: italic;
-            color: #ffffff;
-            background: rgba(255, 64, 128, 0.3);
-            padding: 25px;
-            border-radius: 25px;
-            margin-top: 20px;
-            border-left: 6px solid #ff85c1;
-            font-size: 1rem;
-            line-height: 1.7;
-            box-shadow: inset 0 0 30px #ff69a5;
-            backdrop-filter: blur(5px);
-            border: 1px solid #ffffff50;
-        }
-
-        .testimonio-moderno b {
-            color: #ffffff;
-            font-style: normal;
-            text-shadow: 0 0 10px #ff69a5;
-            background: #ff1493;
-            padding: 3px 12px;
-            border-radius: 30px;
-            display: inline-block;
-            margin-top: 5px;
-        }
-
-        /* Contacto ultra llamativo */
-        .contacto-moderno {
-            margin-top: 80px;
-            text-align: center;
-            background: linear-gradient(135deg, #ff1493, #ff4080, #ff69a5);
-            background-size: 300% 300%;
-            animation: gradientMove 5s ease infinite;
-            color: white;
-            padding: 70px 40px;
-            border-radius: 70px 70px 40px 40px;
-            box-shadow: 0 40px 70px #ff1493, 0 0 100px #ff69a5;
-            position: relative;
-            overflow: hidden;
-            border: 4px solid #ffffff80;
-        }
-
-        @keyframes gradientMove {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .contacto-moderno::before {
-            content: "🧁 🎂 🍰 🍩";
-            font-size: 12rem;
-            position: absolute;
-            bottom: -40px;
-            right: -20px;
-            opacity: 0.2;
-            transform: rotate(-10deg);
-            white-space: nowrap;
-            color: #ffffff;
-            text-shadow: 0 0 30px #ffffff;
-        }
-
-        .contacto-moderno h2 {
-            font-size: 4rem;
-            margin-bottom: 30px;
-            font-weight: 800;
-            text-shadow: 5px 5px 0 #b32e5a, 0 0 50px #ffffff;
-            position: relative;
-        }
-
-        .whatsapp-btn-moderno {
-            background: #25d366;
-            color: white;
-            padding: 25px 60px;
-            text-decoration: none;
-            border-radius: 80px;
-            font-weight: bold;
-            font-size: 2rem;
-            display: inline-block;
-            margin-top: 30px;
-            box-shadow: 0 30px 50px rgba(37, 211, 102, 0.6), 0 0 60px #25d366;
-            transition: all 0.4s ease;
-            border: 4px solid white;
-            letter-spacing: 2px;
-            position: relative;
-            z-index: 2;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); box-shadow: 0 40px 70px #25d366, 0 0 100px #25d366; }
-            100% { transform: scale(1); }
-        }
-
-        .whatsapp-btn-moderno:hover {
-            background: #20b859;
-            transform: scale(1.1);
-            box-shadow: 0 50px 80px #20b859, 0 0 150px #20b859;
-            animation: none;
-        }
-
-        .whatsapp-btn-moderno i {
-            margin-right: 15px;
-            font-size: 2.5rem;
-            vertical-align: middle;
-            filter: drop-shadow(0 0 10px white);
-        }
-
-        /* Pie de página */
-        .footer-text {
-            text-align: center;
-            padding: 30px;
-            color: #ffffff;
-            font-size: 1.1rem;
-            position: relative;
-            z-index: 2;
-            text-shadow: 0 0 15px #ff69a5;
-            letter-spacing: 3px;
-            background: rgba(255,64,128,0.2);
-            backdrop-filter: blur(5px);
-            margin-top: 40px;
-            border-radius: 60px;
-            border: 2px solid #ffffff30;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .logo-text {
-                font-size: 3.5rem;
-            }
-            
-            .logo-text span {
-                font-size: 1.8rem;
-            }
-            
-            .titulo-seccion {
-                font-size: 2.5rem;
-            }
-            
-            .subtitulo-seccion {
-                font-size: 1.2rem;
-            }
-            
-            .imagen-wrapper {
-                height: 250px;
-            }
-            
-            .contacto-moderno h2 {
-                font-size: 2.5rem;
-            }
-            
-            .whatsapp-btn-moderno {
-                padding: 20px 40px;
-                font-size: 1.5rem;
-            }
-
-            .texto-vertical {
-                font-size: 18vw;
-                -webkit-text-stroke: 2px #ff69a5;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .logo-text {
-                font-size: 2.5rem;
-            }
-            
-            .card-moderna h3 {
-                font-size: 1.8rem;
-            }
-
-            .texto-vertical {
-                font-size: 22vw;
-                letter-spacing: 10px;
-            }
-        }
-    </style>
-</head>
-<body>
-
-<!-- Fondo brillante -->
-<div class="fondo-brillante"></div>
-
-<!-- TEXTO MÓVIL EN EL FONDO - AHORA SÚPER VISIBLE -->
-<div class="fondo-movil">
-    <div class="texto-vertical">✦ Ge'lifiesta ✦</div>
-    <div class="texto-vertical">✦ Ge'lifiesta ✦</div>
-    <div class="texto-vertical">✦ Ge'lifiesta ✦</div>
-    <div class="texto-vertical">✦ Ge'lifiesta ✦</div>
-    <div class="texto-vertical">✦ Ge'lifiesta ✦</div>
-    <div class="texto-vertical">✦ Ge'lifiesta ✦</div>
-</div>
-
-<header class="modern-header">
-    <h1 class="logo-text">Ge'lifiesta<span>Gourmet</span></h1>
-    <p class="tagline">Gelatina Gourmet & Repostería de Diseño</p>
-</header>
-
-<div class="container">
-    <!-- Servicios -->
-    <div class="servicios-modernos">
-        <div class="card-moderna">
-            <h3>🎨 Impresiones Comestibles</h3>
-            <p>Personaliza tus creaciones con nuestras impresiones de alta calidad.</p>
-            <p><span class="highlight-moderno">Opciones: Hoja de Arroz y Azúcar</span></p>
-        </div>
-        <div class="card-moderna">
-            <h3>🍰 Gelatinas Gourmet</h3>
-            <p>Elaboradas con ingredientes premium y diseños únicos.</p>
-            <p><span class="highlight-moderno">Temática: ¡Cualquier personaje!</span></p>
-        </div>
-    </div>
-
-    <!-- Títulos de Galería -->
-    <h2 class="titulo-seccion">Diseños personalizados que encantan</h2>
-    <p class="subtitulo-seccion">Nuestros trabajos más recientes</p>
+    .titulo-seccion {
+        font-size: 2.5rem;
+    }
     
-    <!-- Galería -->
-    <div class="galeria-grid-moderna">
-        <div class="foto-cliente-moderna">
-            <div class="imagen-wrapper">
-                <img src="image_1.png" alt="Homenaje al 18 cumpleaños">
-            </div>
-            <div class="info-cliente-moderna">
-                <h4>🎂 Homenaje al 18 cumpleaños</h4>
-                <p class="p-desc-moderna">Kit completo con gelatina central de Snoopy y paletas individuales a juego.</p>
-                <div class="testimonio-moderno">
-                    "¡La mesa de dulces quedó espectacular! La impresión es súper nítida y el sabor increíble. ¡Gracias!" - <b>Cumpleañera Feliz</b>
-                </div>
-            </div>
-        </div>
+    .subtitulo-seccion {
+        font-size: 1.2rem;
+    }
+    
+    .imagen-wrapper {
+        height: 250px;
+    }
+    
+    .contacto-moderno h2 {
+        font-size: 2.5rem;
+    }
+    
+    .whatsapp-btn-moderno {
+        padding: 20px 40px;
+        font-size: 1.5rem;
+    }
+    
+    .texto-vertical {
+        font-size: 18vw;
+        -webkit-text-stroke: 2px #ff69a5;
+    }
+    
+    .galeria-grid-moderna {
+        grid-template-columns: 1fr;
+    }
+}
 
-        <div class="foto-cliente-moderna">
-            <div class="imagen-wrapper">
-                <img src="image_2.png" alt="Aventura Saiyajin">
-            </div>
-            <div class="info-cliente-moderna">
-                <h4>⚡ Aventura Saiyajin para los 9 meses</h4>
-                <p class="p-desc-moderna">Diseño de Dragon Ball Z con gelatina de Goku y paletas 'Esferas del Dragón'.</p>
-                <div class="testimonio-moderno">
-                    "Buscábamos algo único y Ge'lifiesta superó las expectativas. ¡Las esferas del dragón fueron la sensación!" - <b>Papás de Thiago</b>
-                </div>
-            </div>
-        </div>
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 2.5rem;
+    }
+    
+    .card-moderna h3 {
+        font-size: 1.8rem;
+    }
+    
+    .texto-vertical {
+        font-size: 22vw;
+        letter-spacing: 10px;
+    }
+    
+    .container {
+        padding: 0 15px 40px;
+    }
+    
+    .servicios-modernos {
+        grid-template-columns: 1fr;
+    }
+}
 
-        <div class="foto-cliente-moderna">
-            <div class="imagen-wrapper">
-                <img src="image_3.png" alt="Magia en la Fiesta con Bluey">
-            </div>
-            <div class="info-cliente-moderna">
-                <h4>🐶 Magia en la Fiesta con Bluey</h4>
-                <p class="p-desc-moderna">Gelatina principal de Bluey acompañada de paletas con todos los personajes.</p>
-                <div class="testimonio-moderno">
-                    "Mi hijo no podía creerlo cuando vio su pastel de Bluey. ¡Perfecto y muy detallado!" - <b>Mamá de Mati</b>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Contacto -->
-    <div class="contacto-moderno">
-        <h2>¿Tienes un evento? 🎉</h2>
-        <a href="https://wa.me/522226038991" class="whatsapp-btn-moderno">
-            <i>📱</i> Pedir por WhatsApp
-        </a>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer-text">
-        ✦ Gelatinas Gourmet con diseño personalizado ✦
-    </div>
-</div>
-
-</body>
-</html>
-</html>
